@@ -9,5 +9,7 @@ Rails.application.configure do
 
   config.view_component.show_previews = true
 
+  config.x.mailing_list_age_step = true
+
   config.x.zendesk_chat = true
 end
