@@ -79,6 +79,8 @@ gem "actionpack-cloudfront", ">= 1.1.0"
 # HTML-aware ERB parsing
 gem "better_html"
 
+gem "validates_timeliness"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
