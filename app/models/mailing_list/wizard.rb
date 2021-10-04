@@ -8,6 +8,7 @@ module MailingList
       Steps::Name,
       ::Wizard::Steps::Authenticate,
       Steps::AlreadySubscribed,
+      Steps::Age,
       Steps::DegreeStatus,
       Steps::TeacherTraining,
       Steps::Subject,
