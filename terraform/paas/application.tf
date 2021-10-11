@@ -1,7 +1,10 @@
 locals {
-  environment_map = { HTTPAUTH_PASSWORD = data.azurerm_key_vault_secret.http_password.value,
-                      HTTPAUTH_USERNAME = data.azurerm_key_vault_secret.http_username.value,
-                      BASIC_AUTH        = var.basic_auth}
+  environment_map = { HTTPAUTH_PASSWORD        = data.azurerm_key_vault_secret.http_password.value,
+                      HTTPAUTH_USERNAME        = data.azurerm_key_vault_secret.http_username.value,
+                      BASIC_AUTH               = var.basic_auth,
+                      RAILS_SERVE_STATIC_FILES = "True" ,
+                      APP_URL                  = var.app_url ,
+                      APP_ASSETS_URL           = var.app_assets_url}
 }
 
 resource "cloudfoundry_app" "app_application" {

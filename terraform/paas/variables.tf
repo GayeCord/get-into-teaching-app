@@ -13,6 +13,14 @@ variable "application_stopped" {
   default = false
 }
 
+variable "app_assets_url" {
+  default = ""
+}
+
+variable "app_url" {
+  default = ""
+}
+
 variable "timeout" {
   default = 180
 }
