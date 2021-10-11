@@ -20,19 +20,13 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  config.public_file_server.enabled = true
 
-  config.public_file_server.headers = if ENV["APP_URL"].present?
-                                        {
-                                          "Cache-Control" => "max-age=31536000, public, immutable",
-                                          "Access-Control-Allow-Origin" => ENV["APP_URL"],
-                                        }
-                                      else
-                                        {
-                                          "Cache-Control" => "public, max-age=#{365.days.to_i}",
-                                          "Access-Control-Allow-Origin" => ENV["APP_URL"],
-                                        }
-                                      end
+  config.public_file_server.headers =
+    {
+      "Cache-Control" => "max-age=31536000, public, immutable",
+      "Access-Control-Allow-Origin" => ENV["APP_URL"],
+    }
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
